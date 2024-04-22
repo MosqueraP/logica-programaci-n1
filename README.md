@@ -1,4 +1,4 @@
-# Ejercicio de Logica-1 - Mayor numero
+# Ejercicio de Logica-1 Mayor numero
 
 - Crear un programa en JavaScript que realice lo siguiente:
 
