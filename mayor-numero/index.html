@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numero mayor</title>
+</head>
+<body>
+    <h1>Numero Mayor</h1>
+    
+    <script>
+        num1 = parseFloat(prompt("Ingresa un numero"))
+        num2 =  parseFloat(prompt("Ingresa un numero"))
+        num3 =  parseFloat(prompt("Ingresa un numero"))
+
+        function ordenarNumeros(num1, num2, num3) {
+            var datos_son_texto = false;
+
+            // si almenos un dato no es numero, entra en este if y mustra este mensaje 
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                datos_son_texto = true; // inicializamos variable datos_sones_texto para que que entre o no en la siguiente función
+                var mensaje = "Todos los datos deben ser numeros\n\n" +
+                              "Datos ingresados:\n" +
+                              num1 + "\n" +
+                              num2 + "\n" +
+                              num3;
+                alert(mensaje);
+                // Detener la ejecución lanzando una excepción, amigable al usuario
+                alert('Hasta pronto 😚');
+            }
+            
+            if (datos_son_texto == false){
+
+                var mayor = Math.max(num1, num2, num3); // max -> identifica el número mayor
+                var menor = Math.min(num1, num2, num3); // min -> identifica el número menor
+            
+                // número del centro
+                // sumamos los tres numero y le restamos el mayor y menor y lo que queda es el medio
+                var centro = num1 + num2 + num3 - mayor - menor;
+            
+                // Ordenar los números de menor a mayor y mostrarlos
+                var numerosMenorAMayor = [menor, centro, mayor];
+                console.log("Números ordenados de menor a mayor:", numerosMenorAMayor.join(", ")); // mensaje y separador con coma
+            
+                // Ordenar los números de mayor a menor y mostrarlos
+                var numerosMayorAMenor = [mayor, centro, menor];
+                console.log("Números ordenados de mayor a menor:", numerosMayorAMenor.join(", "));
+                
+                console.log("Numero centro " + centro)
+                    
+            }
+        }
+        
+       // llamar la fuinción
+        ordenarNumeros(num1, num2, num3); 
+        
+        //4, 4, 2.
+
+    </script>
+</body>
+</html>
